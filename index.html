@@ -2030,6 +2030,10 @@ function updateTimer(dt) {
     }
 }
 
+/* =========================================================
+   LEVEL SETUP
+========================================================= */
+
 function setupLevel() {
 
     buildLevel();
@@ -2051,6 +2055,10 @@ function setupLevel() {
 
     updateHUD();
 }
+
+/* =========================================================
+   GAME LOOP
+========================================================= */
 
 let lastTime = performance.now();
 let deltaTime = 0;
@@ -2084,6 +2092,10 @@ function gameLoop(now) {
 }
 
 requestAnimationFrame(gameLoop);
+
+/* =========================================================
+   GAME STATES
+========================================================= */
 
 function startGame() {
 
@@ -2218,6 +2230,10 @@ function levelComplete() {
         .classList.add("hidden");
 }
 
+/* =========================================================
+   UI
+========================================================= */
+
 function hideAllOverlays() {
 
     document.querySelectorAll(".overlay")
@@ -2248,6 +2264,10 @@ function showMenu() {
     document.getElementById("bestLevel")
         .textContent = bestLevel;
 }
+
+/* =========================================================
+   BUTTON EVENTS
+========================================================= */
 
 document.getElementById("startButton")
     .addEventListener("click", startGame);
@@ -2309,6 +2329,10 @@ document.getElementById("soundButton")
 
         initAudio();
     });
+
+/* =========================================================
+   INITIALIZATION
+========================================================= */
 
 setupLevel();
 showMenu();
